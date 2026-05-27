@@ -1,54 +1,85 @@
+"use client";
+
 import Navbar from "../layout/Navbar";
-import Button from "../ui/Button";
-import FloatingCard from "../ui/FloatingCard";
+
+import { motion } from "framer-motion";
+import TrustedLogos from "../ui/TrustedLogos";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <header className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-7xl px-4">
+    <header className="min-h-screen overflow-hidden bg-[#050816] text-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Navbar />
 
-        <section className="grid min-h-[85vh] grid-cols-1 items-center gap-16 py-16 lg:grid-cols-2">
+        <section className="grid min-h-[85vh] grid-cols-1 items-center gap-16 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
           {/* LEFT SIDE */}
-          <div>
-            <p className="mb-4 text-blue-400">Modern AI Platform</p>
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-blue-400">
+              FUTURE OF BANKING
+            </p> */}
 
-            <h1 className="max-w-2xl text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-              Build Better Digital Products For Modern Teams
+            <h1 className="max-w-[650px] text-[52px] font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-[4.5rem]">
+              The new foundation
+              <br />
+              of modern banking
             </h1>
 
-            <p className="mt-6 max-w-lg text-lg leading-8 text-gray-400">
-              Create scalable and modern applications with powerful tools,
-              intuitive workflows, and seamless collaboration experiences.
+            <p className="mt-6 max-w-md text-lg leading-8 text-gray-300/80">
+              We drive innovation and growth, provide seamless customer
+              experience and operational excellence
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button>Get Started</Button>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <Image
+                src="/buttons/request-demo-button.png"
+                alt="Request Demo"
+                width={180}
+                height={56}
+                priority
+                className="h-auto w-[200px]"
+              />
 
-              <Button variant="secondary">Learn More</Button>
+              <Image
+                src="/buttons/contact-button.png"
+                alt="Contact Button"
+                width={180}
+                height={56}
+                className="h-auto w-[200px]"
+              />
             </div>
-          </div>
+            <div className="mt-16 w-full text-center lg:text-left">
+              <TrustedLogos />
+            </div>
+          </motion.div>
 
           {/* RIGHT SIDE */}
-          <div className="relative flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative mt-8 flex items-center justify-center lg:mt-0 lg:justify-end"
+          >
             {/* Glow */}
-            <div className="absolute h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
+            <div className="absolute h-72 w-72 rounded-full bg-blue-500/30 blur-3xl lg:h-96 lg:w-96" />
 
-            {/* Main Card */}
-            <div className="relative h-[500px] w-full max-w-md rounded-[32px] border border-white/10 bg-zinc-900/80 backdrop-blur-xl"></div>
-
-            <FloatingCard
-              title="24K Users"
-              subtitle="Active Growth"
-              className="-left-8 top-10"
-            />
-
-            <FloatingCard
-              title="99.9%"
-              subtitle="Success Rate"
-              className="-right-8 bottom-10"
-            />
-          </div>
+            {/* Hero Image */}
+            <div className="relative w-full max-w-2xl">
+              <Image
+                src="/images/hero-image.png"
+                alt="Modern Banking"
+                width={900}
+                height={700}
+                priority
+                className="relative z-10 h-auto w-full object-contain"
+              />
+            </div>
+          </motion.div>
         </section>
       </div>
     </header>

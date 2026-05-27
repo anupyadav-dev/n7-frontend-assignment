@@ -26,6 +26,14 @@ body {
 } */
 
 body {
-  background: #050816;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.15), transparent 40%),
+    #050816;
+
   color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
 }

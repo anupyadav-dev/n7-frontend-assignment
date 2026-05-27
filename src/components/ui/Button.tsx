@@ -2,17 +2,22 @@ import { ReactNode } from "react";
 
 type ButtonProps = {
   children: ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "navbar";
 };
 
 export default function Button({ children, variant = "primary" }: ButtonProps) {
   const baseStyles =
-    "rounded-full px-6 py-3 font-medium transition-all duration-300";
+    "rounded-xl px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300";
 
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-500",
+    primary:
+      "bg-gradient-to-r from-sky-500 to-blue-700 text-white hover:scale-105",
 
-    secondary: "border border-white/20 bg-white/5 text-white hover:bg-white/10",
+    secondary:
+      "border border-white/20 bg-transparent text-white hover:bg-white hover:text-black",
+
+    navbar:
+      "border border-white/20 bg-transparent px-6 py-3 text-white hover:bg-white hover:text-black",
   };
 
   return (
