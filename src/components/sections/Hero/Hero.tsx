@@ -21,13 +21,13 @@ export default function Hero() {
               FUTURE OF BANKING
             </p> */}
 
-            <h1 className="max-w-[650px] text-[52px] font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-[4.5rem]">
+            <h1 className="max-w-[650px] text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
               The new foundation
               <br />
               of modern banking
             </h1>
 
-            <p className="mt-6 max-w-md text-lg leading-8 text-gray-300/80">
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">
               We drive innovation and growth, provide seamless customer
               experience and operational excellence
             </p>
