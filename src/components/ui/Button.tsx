@@ -1,26 +1,38 @@
-import { ReactNode } from "react";
+import React from "react";
 
 type ButtonProps = {
-  children: ReactNode;
-  variant?: "primary" | "secondary" | "navbar";
+  children: React.ReactNode;
+  variant?: "primary" | "secondary";
+  className?: string;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
 };
 
-export default function Button({ children, variant = "primary" }: ButtonProps) {
+export default function Button({
+  children,
+  variant = "primary",
+  className = "",
+  onClick,
+  type = "button",
+}: ButtonProps) {
   const baseStyles =
-    "rounded-xl px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300";
+    "inline-flex h-14 items-center justify-center rounded-xl px-12 text-[13px] font-semibold uppercase tracking-[0.18em] transition";
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-sky-500 to-blue-700 text-white hover:scale-105",
+      "bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8] text-white shadow-[0_8px_24px_-6px_rgba(59,130,246,0.55)] hover:from-white hover:to-white hover:text-[#1D4ED8]",
 
     secondary:
-      "border border-white/20 bg-transparent text-white hover:bg-white hover:text-black",
-
-    navbar:
-      "border border-white/20 bg-transparent px-6 py-3 text-white hover:bg-white hover:text-black",
+      "border border-white text-white bg-transparent hover:bg-white hover:text-[#050816]",
   };
 
   return (
-    <button className={`${baseStyles} ${variants[variant]}`}>{children}</button>
+    <button
+      type={type}
+      onClick={onClick}
+      className={`${baseStyles} ${variants[variant]} ${className}`}
+    >
+      {children}
+    </button>
   );
 }

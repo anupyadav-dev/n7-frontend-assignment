@@ -1,17 +1,14 @@
 "use client";
 
-import Navbar from "../layout/Navbar";
-
 import { motion } from "framer-motion";
 import TrustedLogos from "../ui/TrustedLogos";
 import Image from "next/image";
+import Button from "../ui/Button";
 
 export default function Hero() {
   return (
     <header className="min-h-screen overflow-hidden bg-[#050816] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Navbar />
-
         <section className="grid min-h-[85vh] grid-cols-1 items-center gap-16 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
           {/* LEFT SIDE */}
           <motion.div
@@ -36,22 +33,9 @@ export default function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <Image
-                src="/buttons/request-demo-button.png"
-                alt="Request Demo"
-                width={180}
-                height={56}
-                priority
-                className="h-auto w-[200px]"
-              />
+              <Button variant="primary">Request Demo</Button>
 
-              <Image
-                src="/buttons/contact-button.png"
-                alt="Contact Button"
-                width={180}
-                height={56}
-                className="h-auto w-[200px]"
-              />
+              <Button variant="secondary">Contact Us</Button>
             </div>
             <div className="mt-16 w-full text-center lg:text-left">
               <TrustedLogos />
@@ -66,17 +50,17 @@ export default function Hero() {
             className="relative mt-8 flex items-center justify-center lg:mt-0 lg:justify-end"
           >
             {/* Glow */}
-            <div className="absolute h-72 w-72 rounded-full bg-blue-500/30 blur-3xl lg:h-96 lg:w-96" />
+            <div className="absolute left-20 top-[58%] h-[180px] w-[180px] -translate-y-1/2 rounded-full bg-sky-500/70 blur-[90px] lg:h-[280px] lg:w-[250px]" />
 
             {/* Hero Image */}
-            <div className="relative w-full max-w-2xl">
+            <div className="relative w-full max-w-[620px]">
               <Image
                 src="/images/hero-image.png"
                 alt="Modern Banking"
                 width={900}
                 height={700}
                 priority
-                className="relative z-10 h-auto w-full object-contain"
+                className="relative z-10 h-auto w-full object-contain "
               />
             </div>
           </motion.div>
