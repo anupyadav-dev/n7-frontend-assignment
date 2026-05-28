@@ -16,12 +16,18 @@ export default function SolutionCard({ solution }: Props) {
       <div className="flex items-start justify-between">
         {/* ICON */}
         <div className="flex h-10 w-10 items-center justify-center">
-          <Image src={icon} alt={title} width={36} height={36} />
+          <Image
+            src={icon}
+            alt={title}
+            width={36}
+            height={36}
+            className="h-auto w-auto object-contain"
+          />
         </div>
 
         {/* TAG */}
         {tag && (
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/50">
+          <span className="text-[15px] font-medium uppercase tracking-[0.18em] text-white/50">
             {tag}
           </span>
         )}

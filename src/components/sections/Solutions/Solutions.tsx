@@ -24,7 +24,9 @@ export default function Solutions() {
             className="flex flex-col items-start lg:sticky lg:top-3 lg:self-start"
           >
             <h2 className="max-w-md text-4xl font-semibold leading-[1.15] tracking-tight text-white sm:text-5xl">
-              All of our solutions are tailor-made to your needs
+              All of our solutions are
+              <br />
+              tailor-made to your needs
             </h2>
 
             <div className="mt-10">
