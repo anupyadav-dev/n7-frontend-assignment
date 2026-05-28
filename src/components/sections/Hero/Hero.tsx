@@ -7,7 +7,7 @@ import Button from "../../ui/Button";
 
 export default function Hero() {
   return (
-    <header className="overflow-hidden bg-[#050816] text-white">
+    <header className="overflow-hidden text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <section className="grid min-h-[75vh] grid-cols-1 items-center gap-16 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
           {/* LEFT SIDE */}
@@ -50,7 +50,7 @@ export default function Hero() {
             className="relative mt-8 flex items-center justify-center lg:mt-0 lg:justify-end"
           >
             {/* Glow */}
-            <div className="absolute left-20 top-[58%] h-[180px] w-[180px] -translate-y-1/2 rounded-full bg-sky-500/70 blur-[90px] lg:h-[280px] lg:w-[250px]" />
+            <div className="absolute left-20 top-[58%] h-[180px] w-[180px] -translate-y-1/2 rounded-full bg-sky-500/60 blur-[90px] lg:h-[280px] lg:w-[250px]" />
 
             {/* Hero Image */}
             <div className="relative w-full max-w-[620px]">
