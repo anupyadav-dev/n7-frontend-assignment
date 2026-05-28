@@ -8,9 +8,9 @@ import LearnMoreLink from "@/components/ui/LearnMoreLink";
 
 export default function FeatureShowcase() {
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32">
+    <section className="relative overflow-hidden py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="relative grid items-center gap-16 lg:grid-cols-2">
+        <div className="relative grid items-center gap-20 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Background Text */}
           <div className="pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 select-none lg:block">
             <span className="text-[320px] font-semibold leading-none tracking-tight text-[#0B1733] opacity-40">
@@ -26,7 +26,7 @@ export default function FeatureShowcase() {
             transition={{ duration: 0.6 }}
             className="relative z-10 max-w-xl"
           >
-            <h2 className="text-5xl font-semibold leading-[1.05] tracking-tight text-white lg:text-6xl">
+            <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
               A complete cloud-based core banking.
             </h2>
 
@@ -54,7 +54,7 @@ export default function FeatureShowcase() {
               alt="Core Banking Dashboard"
               width={900}
               height={650}
-              className="h-auto w-full rounded-2xl object-contain"
+              className="h-auto w-full rounded-2xl object-contain shadow-2xl"
               priority
             />
           </motion.div>
