@@ -9,7 +9,7 @@ const logos: string[] = [
 
 export default function TrustedLogos() {
   return (
-    <div className="mt-16 text-center lg:text-left">
+    <div className="text-center lg:text-left">
       <p className="mb-4 text-sm text-gray-400">Trusted By:</p>
 
       <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">

@@ -50,7 +50,7 @@ export default function Hero() {
             className="relative mt-8 flex items-center justify-center lg:mt-0 lg:justify-end"
           >
             {/* Glow */}
-            <div className="absolute left-20 top-[58%] h-[180px] w-[180px] -translate-y-1/2 rounded-full bg-sky-500/60 blur-[90px] lg:h-[280px] lg:w-[250px]" />
+            <div className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500/60 blur-[90px] lg:h-[280px] lg:w-[280px]" />
 
             {/* Hero Image */}
             <div className="relative w-full max-w-[620px]">
