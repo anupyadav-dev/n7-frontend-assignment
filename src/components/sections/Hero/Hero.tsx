@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TrustedLogos from "../ui/TrustedLogos";
+import TrustedLogos from "./TrustedLogos";
 import Image from "next/image";
-import Button from "../ui/Button";
+import Button from "../../ui/Button";
 
 export default function Hero() {
   return (
-    <header className="min-h-screen overflow-hidden bg-[#050816] text-white">
+    <header className="overflow-hidden bg-[#050816] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <section className="grid min-h-[85vh] grid-cols-1 items-center gap-16 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
+        <section className="grid min-h-[75vh] grid-cols-1 items-center gap-16 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
           {/* LEFT SIDE */}
           <motion.div
             className="text-center lg:text-left"
