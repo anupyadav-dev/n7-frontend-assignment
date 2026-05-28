@@ -16,7 +16,7 @@ export default function Button({
   type = "button",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex h-14 items-center justify-center rounded-xl px-12 text-[13px] font-semibold uppercase tracking-[0.18em] transition";
+    "inline-flex h-14 items-center justify-center rounded-xl px-12 text-[13px] font-semibold uppercase tracking-[0.18em] transition-all duration-300";
 
   const variants = {
     primary:
