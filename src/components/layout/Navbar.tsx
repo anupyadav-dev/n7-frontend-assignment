@@ -10,7 +10,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="mx-auto flex max-w-3xl items-center justify-between rounded-2xl border border-white/10 bg-[#363535b2] px-6 py-2 backdrop-blur-xl mt-6 sticky top-4 z-50">
+    <nav className="sticky top-4 z-50 mx-auto mt-4 flex max-w-3xl items-center justify-between rounded-2xl border border-white/10 bg-[#050816]/70 px-6 py-2 backdrop-blur-xl">
       {/* LOGO */}
       <Link href="/" className="text-2xl font-semibold tracking-wide">
         N7
