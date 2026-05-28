@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <header className="overflow-hidden text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <section className="grid min-h-[75vh] grid-cols-1 items-center gap-16 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
+        <section className="grid grid-cols-1 items-center gap-16 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
           {/* LEFT SIDE */}
           <motion.div
             className="text-center lg:text-left"
