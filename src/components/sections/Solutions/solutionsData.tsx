@@ -14,18 +14,16 @@ export const solutions: Solution[] = [
     description:
       "CB7 helps your financial institution improve the client experience, automate and optimize procedures, simplify banking operations for your employees, improve risk management, increase productivity, and ensure full regulatory compliance.",
     icon: "/icons/core-banking.svg",
-    href: "#",
+    href: "#core-banking",
   },
-
   {
     id: "digital-banking",
     title: "Digital Banking N7",
     description:
       "N7 brings full capabilities across strategy, human-centred design, operations, engineering and data science to create and deliver disruptive innovation. Our approach to building digital banks is specifically designed to help clients.",
     icon: "/icons/digital-banking.svg",
-    href: "#",
+    href: "#digital-banking",
   },
-
   {
     id: "open-banking",
     title: "Open Banking",
@@ -34,7 +32,6 @@ export const solutions: Solution[] = [
     icon: "/icons/open-banking.svg",
     href: "#",
   },
-
   {
     id: "loan-origination",
     title: "Loan Origination System",
@@ -44,7 +41,6 @@ export const solutions: Solution[] = [
     icon: "/icons/loan-origination.svg",
     href: "#",
   },
-
   {
     id: "loan-management",
     title: "Loan Management System",
