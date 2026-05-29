@@ -17,13 +17,14 @@ export default function FeatureShowcase() {
           {/* OUTLINE WATERMARK — CB7 */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 z-0 hidden select-none items-center sm:flex"
+            className="pointer-events-none absolute inset-0 z-0 hidden lg:flex"
           >
             <span
-              className="whitespace-nowrap font-bold leading-none tracking-tight text-transparent"
+              className="select-none font-semibold leading-none tracking-[0.01em] text-transparent"
               style={{
-                fontSize: "clamp(180px, 28vw, 460px)",
-                WebkitTextStroke: "1px rgba(148, 163, 184, 0.18)",
+                fontSize: "clamp(320px, 42vw, 760px)",
+                WebkitTextStroke: "1px rgba(59,130,246,0.12)",
+                transform: "translateX(-20%)",
               }}
             >
               CB7
@@ -36,19 +37,19 @@ export default function FeatureShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-120px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-20 max-w-xl"
+            className="relative z-20 max-w-[540px] lg:-translate-y-10"
           >
-            <h2 className="text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h2 className="max-w-[560px] text-[2rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[3.6rem] lg:text-[3rem]">
               A complete cloud-based
               <br />
               core banking.
             </h2>
 
-            <p className="mt-6 max-w-sm text-base leading-7 text-white/55 sm:text-lg">
+            <p className="mt-8 max-w-[420px] text-lg leading-8 text-white/60">
               Faster time to market with our cloud-based core banking services
             </p>
 
-            <div className="mt-10 flex flex-col items-start gap-6">
+            <div className="mt-12 flex flex-col items-start gap-5">
               <Button variant="primary">Request Demo</Button>
               <LearnMoreLink />
             </div>
@@ -60,30 +61,33 @@ export default function FeatureShowcase() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-120px" }}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10"
+            className="relative z-10 lg:-mr-24"
           >
-            <div className="relative w-full lg:w-[135%] lg:translate-x-12 xl:translate-x-20">
-              {/* Dashboard card */}
-              {/* Dashboard card — constrained aspect ratio so image never overflows shelf */}
-              <div className="relative z-10 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.75)]">
+            <div className="relative lg:translate-x-24">
+              {/* OUTER BLUE FRAME */}
+              <div className="relative rounded-[2.7rem]">
+                {/* DASHBOARD IMAGE */}
+                <div className="overflow-hidden rounded-[2rem]">
+                  <Image
+                    src="/images/dashboard.png"
+                    alt="Core banking dashboard"
+                    width={1600}
+                    height={1100}
+                    className="relative right-[-10%] h-auto w-[112.8%] object-cover"
+                    priority
+                  />
+                </div>
+
+                {/* CONNECTED RECTANGLE SHELF */}
                 <Image
-                  src="/images/dashboard.png"
-                  alt="AML dashboard showing suspicious transaction reports, donut chart of reasons, STR summary bar chart, and case-level report table"
-                  fill
-                  sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover object-top"
+                  src="/images/Rectangle.png"
+                  alt=""
+                  aria-hidden
+                  width={1400}
+                  height={100}
+                  className="pointer-events-none absolute -bottom-5 left-1/2 z-0 w-[97%] -translate-x-1/2 object-contain"
                 />
               </div>
-
-              {/* Rectangle accent — shelf below dashboard */}
-              <Image
-                src="/images/Rectangle.png"
-                alt=""
-                aria-hidden
-                width={1400}
-                height={80}
-                className="pointer-events-none absolute -bottom-4 left-6 z-0 h-auto w-[94%] object-contain"
-              />
             </div>
           </motion.div>
         </div>
