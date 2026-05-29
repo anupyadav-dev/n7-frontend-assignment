@@ -29,7 +29,7 @@ export default function SolutionCard({ solution }: Props) {
       </div>
 
       <h3 className="mt-5 text-2xl font-semibold text-white">{title}</h3>
-      <p className="mt-4 max-w-[240px] lg:max-w-[260px] text-[1rem] leading-6 text-white/70">
+      <p className="mt-4 max-w-full text-[1rem] leading-6 text-white/70">
         {description}
       </p>
 
