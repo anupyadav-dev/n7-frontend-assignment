@@ -67,15 +67,16 @@ export default function FeatureShowcase() {
               {/* OUTER BLUE FRAME */}
               <div className="relative rounded-[2.7rem]">
                 {/* DASHBOARD IMAGE */}
-                <div className="overflow-hidden rounded-[2rem]">
-                  <Image
-                    src="/images/dashboard.png"
-                    alt="Core banking dashboard"
-                    width={1600}
-                    height={1100}
-                    className="relative right-[-10%] h-auto w-[112.8%] object-cover"
-                    priority
-                  />
+                <div className="w-full max-w-[651px] mx-auto lg:mx-0">
+                  <div className="relative aspect-[651/461] overflow-hidden rounded-[1rem]">
+                    <Image
+                      src="/images/dashboard.png"
+                      alt="Core banking dashboard"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
                 </div>
 
                 {/* CONNECTED RECTANGLE SHELF */}
