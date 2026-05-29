@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
 import CheckItem from "@/components/ui/CheckItem";
 
 const featuresLeft = [
@@ -22,72 +21,74 @@ const featuresRight = [
 
 export default function CoreBankingFeatures() {
   return (
-    <section
-      id="corebanking-features"
-      className="relative overflow-hidden bg-[#050816] py-24 text-white lg:py-32"
-    >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
-          {/* LEFT — Dashboard card (overflows past left edge on desktop) */}
+    <section className="relative bg-[#050816] text-white py-20 md:py-24 lg:py-32 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* GRID (SAFE RESPONSIVE SYSTEM) */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 items-center gap-12 md:gap-16 lg:gap-20 xl:gap-24">
+          {/* LEFT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10"
+            transition={{ duration: 1 }}
+            className="flex justify-center xl:justify-start"
           >
-            <div className="relative w-full lg:w-[135%] lg:-translate-x-12 xl:-translate-x-20">
-              {/* Dashboard with constrained aspect ratio */}
-              <div className="relative z-10 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.75)]">
+            <div className="w-full max-w-[600px]">
+              <div className="relative aspect-[631/409] w-full overflow-hidden rounded-2xl border border-white/10 shadow-lg">
                 <Image
                   src="/images/kyc-dashboard.png"
-                  alt="KYC dashboard showing total customers, KYC progress metrics, branch-level table, and periodic response bar chart"
+                  alt="KYC dashboard"
                   fill
-                  sizes="(min-width: 1024px) 60vw, 100vw"
                   className="object-cover object-top"
                 />
               </div>
 
-              {/* Rectangle accent — shelf */}
               <Image
                 src="/images/Rectangle.png"
                 alt=""
                 aria-hidden
-                width={1400}
+                width={1200}
                 height={80}
-                className="pointer-events-none absolute -bottom-4 right-6 z-0 h-auto w-[94%] object-contain"
+                className="mt-[-10px] w-[90%] mx-auto opacity-80"
               />
             </div>
           </motion.div>
 
-          {/* RIGHT — Content */}
+          {/* RIGHT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-20"
+            transition={{ duration: 0.8 }}
+            className="flex justify-center xl:justify-start"
           >
-            <h2 className="text-3xl font-semibold leading-[1.2] tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Run a more efficient, flexible, and digitally connected
-              corebanking system
-            </h2>
+            <div className="w-full max-w-[560px]">
+              {/* HEADING */}
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold leading-snug tracking-tight">
+                Run a more efficient, flexible, and digitally
+                <br />
+                connected corebanking system
+              </h2>
 
-            <p className="mt-10 text-base font-semibold text-white sm:text-lg">
-              What you will get:
-            </p>
+              {/* SUBTITLE */}
+              <p className="mt-5 text-sm sm:text-base lg:text-lg font-semibold text-white/90">
+                What you will get:
+              </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
-              <ul className="flex flex-col gap-5">
-                {featuresLeft.map((item) => (
-                  <CheckItem key={item}>{item}</CheckItem>
-                ))}
-              </ul>
-              <ul className="flex flex-col gap-5">
-                {featuresRight.map((item) => (
-                  <CheckItem key={item}>{item}</CheckItem>
-                ))}
-              </ul>
+              {/* FEATURES */}
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <ul className="flex flex-col gap-3">
+                  {featuresLeft.map((item) => (
+                    <CheckItem key={item}>{item}</CheckItem>
+                  ))}
+                </ul>
+
+                <ul className="flex flex-col gap-3">
+                  {featuresRight.map((item) => (
+                    <CheckItem key={item}>{item}</CheckItem>
+                  ))}
+                </ul>
+              </div>
             </div>
           </motion.div>
         </div>
