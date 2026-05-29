@@ -9,15 +9,15 @@ const logos = [
 
 export default function TrustedLogos() {
   return (
-    <div>
-      <p className="text-xs uppercase tracking-[0.2em] text-white/40">
+    <div className="flex flex-col items-center gap-4 lg:items-start">
+      <p className="text-xs font-medium uppercase tracking-widest text-white/30">
         Trusted By:
       </p>
-      <ul className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-4">
+      <ul className="flex flex-row flex-nowrap items-center gap-8">
         {logos.map((logo) => (
           <li
             key={logo}
-            className="text-sm font-medium text-white/45 transition-colors hover:text-white"
+            className="flex-shrink-0 text-sm font-semibold tracking-wide text-white/30 transition-colors duration-200"
           >
             {logo}
           </li>

@@ -10,7 +10,7 @@ export default function Solutions() {
   return (
     <section
       id="solutions"
-      className="relative overflow-hidden bg-[#050816] py-24 text-white lg:py-32"
+      className="relative overflow-hidden bg-[#050816] py-20 text-white lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">

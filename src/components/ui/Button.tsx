@@ -20,14 +20,14 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8] text-white shadow-[0_8px_24px_-6px_rgba(59,130,246,0.55)] hover:brightness-110",
+    "bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8] text-white shadow-[0_8px_24px_-6px_rgba(59,130,246,0.55)] hover:bg-none hover:bg-white hover:text-[#3B82F6]",
   secondary:
     "border border-white/25 bg-transparent text-white hover:bg-white hover:text-[#050816]",
 };
 
 const Button = forwardRef<HTMLButtonElement, Props>(function Button(
   { variant = "primary", size = "md", className = "", children, ...rest },
-  ref
+  ref,
 ) {
   return (
     <button
