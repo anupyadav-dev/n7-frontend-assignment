@@ -1,38 +1,43 @@
-import React from "react";
+import { forwardRef } from "react";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonProps = {
-  children: React.ReactNode;
-  variant?: "primary" | "secondary";
-  className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
+type Variant = "primary" | "secondary";
+type Size = "sm" | "md";
+
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: Variant;
+  size?: Size;
+  children: ReactNode;
 };
 
-export default function Button({
-  children,
-  variant = "primary",
-  className = "",
-  onClick,
-  type = "button",
-}: ButtonProps) {
-  const baseStyles =
-    "inline-flex h-14 items-center justify-center rounded-xl px-12 text-[13px] font-semibold uppercase tracking-[0.18em] transition-all duration-300";
+const base =
+  "inline-flex items-center justify-center rounded-full font-semibold uppercase tracking-[0.18em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050816] disabled:pointer-events-none disabled:opacity-50";
 
-  const variants = {
-    primary:
-      "bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8] text-white shadow-[0_8px_24px_-6px_rgba(59,130,246,0.55)] hover:from-white hover:to-white hover:text-[#1D4ED8]",
+const sizes: Record<Size, string> = {
+  sm: "h-10 px-6 text-[11px]",
+  md: "h-14 px-10 text-[13px]",
+};
 
-    secondary:
-      "border border-white text-white bg-transparent hover:bg-white hover:text-[#050816]",
-  };
+const variants: Record<Variant, string> = {
+  primary:
+    "bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8] text-white shadow-[0_8px_24px_-6px_rgba(59,130,246,0.55)] hover:brightness-110",
+  secondary:
+    "border border-white/25 bg-transparent text-white hover:bg-white hover:text-[#050816]",
+};
 
+const Button = forwardRef<HTMLButtonElement, Props>(function Button(
+  { variant = "primary", size = "md", className = "", children, ...rest },
+  ref
+) {
   return (
     <button
-      type={type}
-      onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${className}`}
+      ref={ref}
+      className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
+      {...rest}
     >
       {children}
     </button>
   );
-}
+});
+
+export default Button;

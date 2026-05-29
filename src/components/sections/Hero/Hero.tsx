@@ -1,71 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
-import TrustedLogos from "./TrustedLogos";
 import Image from "next/image";
-import Button from "../../ui/Button";
+import { motion } from "framer-motion";
+
+import Button from "@/components/ui/Button";
+import TrustedLogos from "./TrustedLogos";
 
 export default function Hero() {
   return (
-    <header className="overflow-hidden text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <section className="grid grid-cols-1 items-center gap-16 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
-          {/* LEFT SIDE */}
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[#050816] pt-32 pb-20 text-white lg:pt-40"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-12">
+          {/* LEFT */}
           <motion.div
-            className="text-center lg:text-left"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center text-center lg:items-start lg:text-left"
           >
-            {/* <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-blue-400">
-              FUTURE OF BANKING
-            </p> */}
-
-            <h1 className="max-w-[650px] text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[5rem]">
               The new foundation
               <br />
               of modern banking
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">
+            <p className="mt-6 max-w-md text-base leading-7 text-white/60 sm:text-lg">
               We drive innovation and growth, provide seamless customer
               experience and operational excellence
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
               <Button variant="primary">Request Demo</Button>
-
               <Button variant="secondary">Contact Us</Button>
             </div>
-            <div className="mt-16 w-full text-center lg:text-left">
+
+            <div className="mt-20 w-full">
               <TrustedLogos />
             </div>
           </motion.div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative mt-8 flex items-center justify-center lg:mt-0 lg:justify-end"
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="relative flex items-center justify-center lg:justify-end"
           >
-            {/* Glow */}
-            <div className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500/60 blur-[90px] lg:h-[280px] lg:w-[280px]" />
-
-            {/* Hero Image */}
-            <div className="relative w-full max-w-[620px]">
+            {/* Soft glow centered behind image */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/25 blur-3xl lg:h-[28rem] lg:w-[28rem]"
+            />
+            <div className="relative w-full max-w-xl">
               <Image
                 src="/images/hero-image.png"
-                alt="Modern Banking"
-                width={900}
-                height={700}
+                alt="Modern banking app with balance and recent activity cards"
+                width={1200}
+                height={900}
                 priority
-                className="relative z-10 h-auto w-full object-contain "
+                className="relative z-10 h-auto w-full object-contain"
               />
             </div>
           </motion.div>
-        </section>
+        </div>
       </div>
-    </header>
+    </section>
   );
 }

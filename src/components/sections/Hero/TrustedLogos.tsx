@@ -1,4 +1,4 @@
-const logos: string[] = [
+const logos = [
   "SHELLS",
   "SmartFinder",
   "Zoomerr",
@@ -9,19 +9,20 @@ const logos: string[] = [
 
 export default function TrustedLogos() {
   return (
-    <div className="text-center lg:text-left">
-      <p className="mb-4 text-sm text-gray-400">Trusted By:</p>
-
-      <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
+    <div>
+      <p className="text-xs uppercase tracking-[0.2em] text-white/40">
+        Trusted By:
+      </p>
+      <ul className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-4">
         {logos.map((logo) => (
-          <span
+          <li
             key={logo}
-            className="transition-colors duration-300 hover:text-white"
+            className="text-sm font-medium text-white/45 transition-colors hover:text-white"
           >
             {logo}
-          </span>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
