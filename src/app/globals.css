@@ -1,39 +1,81 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   N7 Design Tokens
+   Single source of truth for color, type, spacing semantics.
+   Reference these via Tailwind classes (bg-bg, text-primary, etc.)
+   ============================================================ */
+@theme {
+  /* ---- Brand ---- */
+  --color-bg: #050816;
+  --color-bg-light: #f3f6fc;
+  --color-surface: rgb(255 255 255 / 0.04);
+  --color-surface-border: rgb(255 255 255 / 0.10);
+
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-300: #93c5fd;
+
+  /* ---- Text ---- */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgb(255 255 255 / 0.60);
+  --color-text-muted: rgb(255 255 255 / 0.40);
+
+  --color-text-primary-light: #0f172a;
+  --color-text-secondary-light: #475569;
+
+  /* ---- Type scale ---- */
+  --text-display-xl: 5rem;       /* 80px — Hero */
+  --text-display-lg: 4rem;       /* 64px — large section H2 */
+  --text-display-md: 3rem;       /* 48px — section H2 */
+  --text-display-sm: 2.25rem;    /* 36px — sub-section */
+
+  /* ---- Easing tokens ---- */
+  --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ---- Section paddings ---- */
+  --space-section-y: 6rem;       /* 96px — base */
+  --space-section-y-lg: 9rem;    /* 144px — large screens */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
-body {
   background:
-    radial-gradient(circle at top, rgba(59, 130, 246, 0.15), transparent 40%),
-    #050816;
-
-  color: white;
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgb(59 130 246 / 0.18), transparent 70%),
+    var(--color-bg);
+  color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
+/* ============================================================
+   Marquee — used by MarqueeStrip (Phase 4)
+   ============================================================ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
+
+/* ============================================================
+   Utility: hide scrollbar (carousels)
+   ============================================================ */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
