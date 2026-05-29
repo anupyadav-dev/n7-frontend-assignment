@@ -11,25 +11,27 @@ export default function SolutionCard({ solution }: Props) {
   return (
     <article className="group relative flex flex-col">
       <div className="flex items-start justify-between">
-        <div className="flex h-10 w-10 items-center justify-center">
+        <div className="flex h-20 w-20 items-center justify-center">
           <Image
             src={icon}
             alt=""
             aria-hidden
-            width={36}
-            height={36}
-            className="h-auto w-auto object-contain"
+            width={48}
+            height={48}
+            className="object-contain opacity-50 grayscale brightness-125 contrast-75"
           />
         </div>
         {tag && (
-          <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50">
+          <span className="relative top-11 text-[15px] font-medium uppercase tracking-[0.1em] text-white/50">
             {tag}
           </span>
         )}
       </div>
 
-      <h3 className="mt-5 text-xl font-semibold text-white">{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-white/55">{description}</p>
+      <h3 className="mt-5 text-2xl font-semibold text-white">{title}</h3>
+      <p className="mt-4 max-w-[240px] lg:max-w-[260px] text-[1rem] leading-6 text-white/70">
+        {description}
+      </p>
 
       <div className="mt-6">
         <LearnMoreLink href={href} />

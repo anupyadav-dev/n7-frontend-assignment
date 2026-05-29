@@ -7,10 +7,10 @@
    ============================================================ */
 @theme {
   /* ---- Brand ---- */
-  --color-bg: #050816;
+  --color-bg: #000d12;
   --color-bg-light: #f3f6fc;
   --color-surface: rgb(255 255 255 / 0.04);
-  --color-surface-border: rgb(255 255 255 / 0.10);
+  --color-surface-border: rgb(255 255 255 / 0.1);
 
   --color-brand-500: #3b82f6;
   --color-brand-600: #2563eb;
@@ -19,24 +19,24 @@
 
   /* ---- Text ---- */
   --color-text-primary: #ffffff;
-  --color-text-secondary: rgb(255 255 255 / 0.60);
-  --color-text-muted: rgb(255 255 255 / 0.40);
+  --color-text-secondary: rgb(255 255 255 / 0.6);
+  --color-text-muted: rgb(255 255 255 / 0.4);
 
   --color-text-primary-light: #0f172a;
   --color-text-secondary-light: #475569;
 
   /* ---- Type scale ---- */
-  --text-display-xl: 5rem;       /* 80px — Hero */
-  --text-display-lg: 4rem;       /* 64px — large section H2 */
-  --text-display-md: 3rem;       /* 48px — section H2 */
-  --text-display-sm: 2.25rem;    /* 36px — sub-section */
+  --text-display-xl: 5rem; /* 80px — Hero */
+  --text-display-lg: 4rem; /* 64px — large section H2 */
+  --text-display-md: 3rem; /* 48px — section H2 */
+  --text-display-sm: 2.25rem; /* 36px — sub-section */
 
   /* ---- Easing tokens ---- */
   --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* ---- Section paddings ---- */
-  --space-section-y: 6rem;       /* 96px — base */
-  --space-section-y-lg: 9rem;    /* 144px — large screens */
+  --space-section-y: 6rem; /* 96px — base */
+  --space-section-y-lg: 9rem; /* 144px — large screens */
 }
 
 /* ============================================================
@@ -47,7 +47,9 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
@@ -59,7 +61,11 @@ html {
 
 body {
   background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgb(59 130 246 / 0.18), transparent 70%),
+    radial-gradient(
+      ellipse 60% 50% at 50% 0%,
+      rgb(59 130 246 / 0.18),
+      transparent 70%
+    ),
     var(--color-bg);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
@@ -70,12 +76,21 @@ body {
    Marquee — used by MarqueeStrip (Phase 4)
    ============================================================ */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ============================================================
    Utility: hide scrollbar (carousels)
    ============================================================ */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
