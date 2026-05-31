@@ -13,12 +13,7 @@ const navLinks: NavLink[] = [
 ];
 
 const Caret = (
-  <svg
-    aria-hidden
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    className="h-3 w-3"
-  >
+  <svg aria-hidden viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3">
     <path
       fillRule="evenodd"
       d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"

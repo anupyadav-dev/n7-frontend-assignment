@@ -1,11 +1,12 @@
 import DigitalBankingFeature from "./DigitalBankingFeature";
 import { digitalBankingFeatures } from "./digitalBankingData";
+import PaperlessCTA from "../PaperlessCTA/PaperlessCTA";
 
 export default function DigitalBanking() {
   return (
     <section
       id="digital-banking"
-      className="relative overflow-hidden bg-[#F3F6FC] py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#E9F2F6] py-24 lg:py-32"
     >
       {/* Decorative outlined circles — drift on the left */}
       <div
@@ -24,6 +25,7 @@ export default function DigitalBanking() {
           ))}
         </div>
       </div>
+      <PaperlessCTA variant="n7" />
     </section>
   );
 }

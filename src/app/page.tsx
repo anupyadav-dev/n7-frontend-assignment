@@ -17,13 +17,13 @@ export default function HomePage() {
         <Solutions />
         <FeatureShowcase />
         <CoreBankingFeatures />
-        <PaperlessCTA />
+        <PaperlessCTA variant="cb7" />
         <MarqueeStrip />
         <DigitalBanking />
-        <PaperlessCTA />
+
         <Insights />
         <CaseStudies />
-        <PaperlessCTA />
+        <PaperlessCTA variant="clean" />
       </main>
       <Footer />
     </>

@@ -33,8 +33,21 @@ export default function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <Button variant="primary">Request Demo</Button>
-              <Button variant="secondary">Contact Us</Button>
+              <Button
+                variant="primary"
+                size="md"
+                className="rounded-full px-10"
+              >
+                Request Demo
+              </Button>
+
+              <Button
+                variant="secondary"
+                size="md"
+                className="rounded-full px-10"
+              >
+                Contact Us
+              </Button>
             </div>
 
             <div className="mt-30 w-full">

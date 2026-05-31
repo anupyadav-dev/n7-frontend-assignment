@@ -3,77 +3,145 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 
-export default function PaperlessCTA() {
+type CTAVariant = "cb7" | "n7" | "clean";
+
+const variants = {
+  cb7: {
+    brand: "CB7",
+    bg: "#03080f",
+    glow: true,
+    watermark: "CB7",
+    wmLeft: "18%",
+    wmSpacing: "0.02em",
+    wmSize: "clamp(200px, 38vw, 640px)",
+    wmStroke: "1.5px rgba(59,130,246,0.22)",
+  },
+  n7: {
+    brand: "N7",
+    bg: "#020609",
+    glow: false,
+    watermark: "N7",
+    wmLeft: "46%",
+    wmSpacing: "-0.04em",
+    wmSize: "clamp(200px, 42vw, 700px)",
+    wmStroke: "1.5px rgba(59,130,246,0.18)",
+  },
+  clean: {
+    brand: "CB7",
+    bg: "transparent",
+    glow: false,
+    watermark: null,
+    wmLeft: "",
+    wmSpacing: "",
+    wmSize: "",
+    wmStroke: "",
+  },
+} satisfies Record<CTAVariant, object>;
+
+export default function PaperlessCTA({
+  variant = "cb7",
+}: {
+  variant?: CTAVariant;
+}) {
+  const v = variants[variant];
+
+  const hasBorder = variant === "cb7" || variant === "n7";
+
   return (
-    <section className="relative bg-[#050816] py-20 sm:py-24 lg:py-32 text-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* CARD */}
-        <div
-          className="relative overflow-hidden rounded-2xl px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-32"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(5,18,32,0.97) 0%, rgba(3,12,24,0.99) 100%)",
-            boxShadow:
-              "inset 0 0 0 1px rgba(59,130,246,0.10), 0 0 0 1px rgba(255,255,255,0.03)",
-          }}
-        >
-          {/* LEFT GLOW */}
+    // Section: sirf outer spacing aur page bg
+    // Glow/watermark/bg sab border ke ANDAR hain
+    <section className="px-4 py-6 text-white sm:px-8 sm:py-10 md:px-12 md:py-12 lg:px-25 lg:py-25">
+      {/* CARD — full width, border, bg, glow, watermark sab iske andar */}
+      <div
+        className={`relative mx-auto w-full overflow-hidden ${
+          hasBorder ? "rounded-4xl border border-white/10" : ""
+        }`}
+        style={{
+          backgroundColor: v.bg,
+          maxWidth: "1284px",
+          minHeight: "clamp(320px, 45vw, 425px)",
+        }}
+      >
+        {/* GLOW — border ke andar */}
+        {v.glow && (
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 w-[60%]"
+            className="pointer-events-none absolute inset-0 select-none"
             style={{
-              background:
-                "radial-gradient(ellipse at left, rgba(14,116,144,0.16) 0%, rgba(3,30,55,0.08) 55%, transparent 80%)",
+              background: [
+                "radial-gradient(ellipse 60% 75% at 18% 50%,",
+                "  rgba(14,116,144,0.40) 0%,",
+                "  rgba(6,60,90,0.20) 50%,",
+                "  transparent 75%)",
+              ].join(""),
             }}
           />
+        )}
 
-          {/* CB7 WATERMARK */}
+        {/* WATERMARK — border ke andar, overflow hidden card tak */}
+        {v.watermark && (
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 flex items-center overflow-hidden select-none"
+            className="pointer-events-none absolute inset-0 hidden select-none items-center overflow-hidden md:flex"
           >
             <span
-              className="whitespace-nowrap font-bold leading-none text-transparent"
+              className="whitespace-nowrap font-black leading-none text-transparent"
               style={{
-                fontSize: "clamp(240px, 36vw, 640px)",
-                letterSpacing: "0.02em",
-                WebkitTextStroke: "1.5px rgba(59,130,246,0.20)",
-                transform: "translate(16%, -10%)",
+                fontSize: v.wmSize,
+                letterSpacing: v.wmSpacing,
+                WebkitTextStroke: v.wmStroke,
+                position: "relative",
+                left: v.wmLeft,
+                top: "-17%",
               }}
             >
-              CB7
+              {v.watermark}
             </span>
           </div>
+        )}
 
-          {/* CONTENT */}
+        {/* CONTENT */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 sm:px-10 sm:py-16 md:px-12 md:py-18 lg:px-20 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="relative z-10 grid items-start gap-10 lg:grid-cols-2"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[52%_48%] lg:gap-0"
           >
-            {/* LEFT */}
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.1]">
+              <h2 className="text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-white sm:text-[2.25rem] lg:text-[3rem]">
                 Take the full advantage of
                 <br />
                 going paper-less now.
               </h2>
-
-              <p className="mt-4 text-sm sm:text-base leading-6 text-white/40 max-w-md">
-                CB7 helps your financial institution improve the client
+              <p className="mt-8 max-w-lg text-md leading-6 text-white/60">
+                {v.brand} helps your financial institution improve the client
                 experience, automate and optimize procedures, simplify banking
                 operations
               </p>
             </div>
 
-            {/* RIGHT — RESPONSIVE BUTTONS */}
-            <div className="flex lg:justify-start justify-start items-start">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mt-6 lg:mt-8">
-                <Button variant="secondary">Contact Us</Button>
-
-                <Button variant="primary">Request Demo</Button>
+            <div className="flex items-start justify-start pt-2 sm:pt-4 md:pt-6 lg:justify-end lg:pt-[4.8rem]">
+              <div className="flex w-full flex-row gap-3 sm:w-auto sm:gap-4">
+                <div className="flex-1 sm:flex-none">
+                  <Button
+                    variant="secondary"
+                    size="md"
+                    className="w-full sm:w-[180px] lg:w-[200px]"
+                  >
+                    Contact Us
+                  </Button>
+                </div>
+                <div className="flex-1 sm:flex-none">
+                  <Button
+                    variant="primary"
+                    size="md"
+                    className="w-full sm:w-[180px] lg:w-[200px]"
+                  >
+                    Request Demo
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
